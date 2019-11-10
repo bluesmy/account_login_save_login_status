@@ -1,0 +1,23 @@
+<div class="container py-5 w-25">
+  <h3 class="text-center">Account Login</h3>
+  <hr>
+  <form method="POST" action="/login">
+    <div class="form-group">
+      {{!-- <label for="exampleInputEmail1"></label> --}}
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email"
+        value={{email}}>
+    </div>
+    <div class="form-group">
+      {{!-- <label for="exampleInputPassword1"></label> --}}
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary text-center">Sign in</button>
+    </div>
+    {{#ifEquals loginStatus false}}
+    <div class="alert alert-danger mt-3" role="alert">
+      <span>Username/Password 錯誤</span>
+    </div>
+    {{/ifEquals}}
+  </form>
+</div>
